@@ -1,0 +1,72 @@
+<form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="contact-form__bg">
+
+    <p class="contact-form__title">Fields marked “*” are required</p>
+
+    <div class="form-group">
+      <label for="enquiryType">Enquiry Type *</label>
+      <select id="enquiryType" class="form-control form-control-lg" [formControlName]="'enquiryType'" (change)="changeSelect()"
+        [ngClass]="{'is-invalid': form.get('enquiryType').invalid && form.get('enquiryType').touched}">
+        <option *ngFor="let prop of types" [ngValue]="prop">{{prop.name}}</option>
+      </select>
+      <div class="invalid-feedback" *ngIf="form.get('enquiryType').invalid && form.get('enquiryType').touched">
+        This field is required.
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="other">
+      <input type="text" class="form-control form-control-lg" id="otherType" [formControlName]="'other'" placeholder="Other">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6 form-group--left">
+        <label for="userName">Name *</label>
+        <input type="text" class="form-control form-control-lg" id="userName" placeholder="Dentist" [formControlName]="'userName'"
+          [ngClass]="{'is-invalid': form.get('userName').invalid && form.get('userName').touched}">
+        <div class="invalid-feedback" *ngIf="form.get('userName').invalid && form.get('userName').touched">
+          This field is required.
+        </div>
+      </div>
+      <div class="form-group col-md-6 form-group--right">
+        <label for="userEmail">Email *</label>
+        <input type="email" class="form-control form-control-lg" id="userEmail" placeholder="rachelm@gmail.com" [formControlName]="'userEmail'"
+          [ngClass]="{'is-invalid': form.get('userEmail').invalid && form.get('userEmail').touched}">
+        <div class="invalid-feedback" *ngIf="form.get('userEmail').invalid && form.get('userEmail').touched">
+          Email is incorrect.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject *</label>
+      <input type="text" class="form-control form-control-lg" id="subject" placeholder="" [formControlName]="'subject'" [ngClass]="{'is-invalid': form.get('subject').invalid && form.get('subject').touched}">
+      <div class="invalid-feedback" *ngIf="form.get('subject').invalid && form.get('subject').touched">
+        This field is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description" class="d-flex justify-content-between">
+        <span>Description *</span>
+        <span>({{textareaLength}}/{{textareaMaxLength}})</span>
+      </label>
+      <textarea class="form-control form-control-lg" id="description" rows="3" [formControlName]="'description'" [maxlength]="textareaMaxLength" [ngClass]="{'is-invalid': form.get('description').invalid && form.get('description').touched}" (input)="calcLength()"></textarea>
+      <div class="invalid-feedback" *ngIf="form.get('description').invalid && form.get('description').touched">
+        This field is required.
+      </div>
+    </div>
+
+    <div class="custom-input-group">
+      <input type="file" class="custom-input" id="fileImg" accept='image/*' (change)="openFile($event, preview)">
+      <label class="custom-label" for="fileImg">
+        <div *ngIf="!isUploadImg">
+          <strong>Add photo</strong>
+          <span>Minimum size of 300x300 jpeg ipg png 5 MB</span>
+        </div>
+        <img src="" alt="" #preview>
+      </label>
+    </div>
+
+  </div>
+  <button type="submit" class="btn btn-submit" [disabled]="!form.valid">Submit</button>
+</form>

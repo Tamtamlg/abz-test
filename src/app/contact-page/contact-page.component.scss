@@ -1,0 +1,131 @@
+@import "../../variables.scss";
+.contact-form {
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+  top: -100px;
+  color: #010101;
+  font-size: 16px;
+  font-weight: 400;
+  label {
+    color: #1c2534;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  textarea {
+    height: 150px;
+  }
+  ::-webkit-input-placeholder {
+    color: #7c8695;
+  }
+  ::-moz-placeholder {
+    color: #7c8695;
+  }
+  :-moz-placeholder {
+    color: #7c8695;
+  }
+  :-ms-input-placeholder {
+    color: #7c8695;
+  }
+}
+
+.contact-form__bg {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #e0e2e6;
+  background: #fff;
+}
+
+.btn-submit {
+  width: 100%;
+  background: $green;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 38px;
+  &:hover {
+    background: #73993d;
+    cursor: pointer;
+  }
+  &:disabled:hover {
+    background: $green;
+    cursor: default;
+  }
+}
+
+.contact-form__title {
+  color: #c1c1c1;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.form-control-lg {
+  height: 52px;
+  font-size: 16px;
+}
+
+.form-group {
+  margin-bottom: 19px;
+}
+
+.form-group--left {
+  padding-right: 15px;
+}
+
+.form-group--right {
+  padding-left: 15px;
+}
+
+.custom-input {
+  display: none;
+}
+
+.custom-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 130px;
+  height: 130px;
+  border-radius: 4px;
+  border: 1px solid #c8cdd5;
+  background-color: #f7f7f7;
+  margin-bottom: 0;
+  cursor: pointer;
+  text-align: center;
+  object-fit: contain;
+  &:hover {
+    border: 1px solid $green;
+  }
+  strong {
+    color: #7c8695;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+  span {
+    color: #c2c2c4;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+  }
+}
+
+.invalid-feedback {
+  position: absolute;
+  margin-top: 3px;
+}

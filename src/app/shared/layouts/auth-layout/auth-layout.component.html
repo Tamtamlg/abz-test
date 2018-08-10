@@ -1,0 +1,73 @@
+<div class="wrapper">
+  <!-- header -->
+  <header class="header">
+    <div class="container-fixed header__container">
+      <div class="row no-gutters header__row">
+        <a href="#" class="logo">
+          <img src="../../../../assets/img/logo.svg" alt="logo">
+        </a>
+        <button class="btn btn--green" [routerLink]="['/service']">Log In Now</button>
+      </div>
+      <div class="header__jumbotron header-jumbotron">
+        <h1 class="header-jumbotron__heading">Home of Dentistry</h1>
+        <p class="header-jumbotron__subheading mb-0">Denteez was created by dentists for dentistry in order to make the life of everyone involved in dentistry easier.</p>
+      </div>
+    </div>
+  </header>
+  <!-- /header -->
+  <!-- content -->
+  <div class="content">
+
+    <!-- main -->
+    <main class="main">
+      <div class="container-fixed">
+
+        <router-outlet></router-outlet>
+
+      </div>
+    </main>
+    <!-- /main -->
+
+    <section class="about">
+      <div class="container-fixed auth-container">
+        <h2 class="about__heading">About Denteez</h2>
+        <div class="row no-gutters about__row">
+          <div class="col-6 about__col">
+            <p>Why is it always so difficult to find what you are looking for in dentistry? Whether it is the latest advancement
+              in technology or techniques or simply a review or understanding of the vast amount of products? Perhaps finding
+              someone to just fix your broken equipment or simply hiring new staff or looking for that new job?</p>
+          </div>
+          <div class="col-6 about__col">
+            <p>Our mission is to give every dental professional the possibility to discuss and share all aspects of their profession,
+              their practice and their business. We aim to make the world of dentistry easy and accessible, so every dental
+              professional can find what they are looking for quickly and easily all in one place.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- /content -->
+</div>
+<!-- /wrapper -->
+
+<footer class="footer">
+  <div class="container-fixed auth-container">
+    <div class="row no-gutters footer-row">
+      <p class="footer__copy">
+        Denteez Copyright 2015
+      </p>
+      <ul class="footer__nav footer-nav">
+        <li class="footer-nav__item">
+          <a href="#" class="footer-nav__link">Support</a>
+        </li>
+        <li class="footer-nav__item">
+          <a href="#" class="footer-nav__link">Privacy Policy</a>
+        </li>
+        <li class="footer-nav__item">
+          <a href="#" class="footer-nav__link">Terms of use</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

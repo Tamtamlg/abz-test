@@ -1,0 +1,98 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "variables.scss";
+// global styles
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+  color: #59606b;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* fix footer */
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  min-width: 970px;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+}
+
+/* /fix footer */
+
+svg {
+  pointer-events: none;
+}
+
+.container-fixed {
+  min-width: 970px;
+  max-width: 1460px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.loader {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(151, 201, 80, 0.25);
+  border-top-color: $green;
+  border-radius: 50%;
+  position: relative;
+  -webkit-animation: loader-rotate 1s linear infinite;
+  animation: loader-rotate 1s linear infinite;
+  top: 50%;
+  margin: auto;
+}
+
+@keyframes loader-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-msg {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  padding: 20px 40px 20px 20px;
+}
+
+.btn--green {
+  border: none;
+  background: $green;
+  color: #fff;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  &:hover {
+    background: #73993d;
+    cursor: pointer;
+  }
+}

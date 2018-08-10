@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "http://504080.com"
+  },
+  "secure": false,
+  "logLevel": "debug",
+  "changeOrigin": true
+}

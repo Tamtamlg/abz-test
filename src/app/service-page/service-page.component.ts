@@ -65,6 +65,6 @@ export class ServicePageComponent implements OnInit, OnDestroy {
     this.errorMessage = msg;
     setTimeout(() => {
       this.errorMessage = null;
-    }, 5000);
+    }, 10000);
   }
 }

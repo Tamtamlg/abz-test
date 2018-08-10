@@ -61,12 +61,22 @@
       <label class="custom-label" for="fileImg">
         <div *ngIf="!isUploadImg">
           <strong>Add photo</strong>
-          <span>Minimum size of 300x300 jpeg ipg png 5 MB</span>
+          <span>Maximum size of 300x300 jpeg jpg png 5 MB</span>
         </div>
         <img src="" alt="" #preview>
       </label>
+      <div class="invalid-feedback d-block">
+        {{uploadError}}
+      </div>
     </div>
 
   </div>
   <button type="submit" class="btn btn-submit" [disabled]="!form.valid">Submit</button>
 </form>
+
+<div class="alert alert-green alert-dismissible error-msg" role="alert" *ngIf="message">
+  {{ message }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="message = null; form.enable()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
